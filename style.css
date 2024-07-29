@@ -36,6 +36,7 @@ body {
 .website-name {
     color: #4b4b4b;
     display: inline-block;
+    cursor: pointer;
 }
 
 .header-right {
