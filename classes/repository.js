@@ -35,7 +35,7 @@ class Repository{
             'Programming',
             '30 July, 2024',
             'You will do your first website',
-            'Create a index.html, write code and after it open this file by using your browser to see result',
+            'Create an index.html, write code and after it open this file by using your browser to see result',
         );
     }
 }

@@ -29,4 +29,8 @@ class AppController{
     openSignUpPage(){
         new SignUpPageController(this);
     }
+
+    openPostPage(appController, post){
+        new PostPageController(appController, post);
+    }
 }

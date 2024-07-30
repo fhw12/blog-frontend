@@ -1,5 +1,5 @@
 class HomePageController{
-    constructor(appController){
+    constructor(appController){ 
         this.appController = appController;
         this.open();
     }
@@ -14,14 +14,35 @@ class HomePageController{
         });
     }
 
+    openPost(post){
+        this.appController.openPostPage(this.appController, post);
+    }
+
     addPost(post){
         const postContainer = document.querySelector('#post-container');
-        postContainer.innerHTML += `
-            <div class="post">
-                <p class="post-theme-date">${post.topic} - ${post.date}</p>
-                <p class="post-title">${post.title}</p>
-                <p class="post-description">${post.description}</p>
-            </div>
-        `;
+        const postElement = document.createElement('div');
+        const postInfoElement = document.createElement('p');
+        const postTitleElement = document.createElement('p');
+        const postDescriptionElement = document.createElement('p');
+        
+        postElement.className = 'post';
+        
+        postInfoElement.className = 'post-theme-date';
+        postTitleElement.className = 'post-title';
+        postDescriptionElement.className = 'post-description';
+
+        postInfoElement.innerText = `${post.topic} - ${post.date}`;
+        postTitleElement.innerText = post.title;
+        postDescriptionElement.innerText = post.description;
+
+        postElement.appendChild(postInfoElement);
+        postElement.appendChild(postTitleElement);
+        postElement.appendChild(postDescriptionElement);
+
+        postElement.addEventListener('click',
+            () => { this.openPost(post); }
+        );
+
+        postContainer.appendChild(postElement);
     }
 }
