@@ -1,6 +1,7 @@
 class AppController{
     constructor(){
         this.page = document.querySelector('#page');
+        this.repository = new Repository();
 
         this.createEvents();
         this.openHomePage();
@@ -15,7 +16,6 @@ class AppController{
 
         signInButton.addEventListener('click', this.openSignInPage.bind(this));
         signUpButton.addEventListener('click', this.openSignUpPage.bind(this));
-        
     }
 
     openHomePage(){
