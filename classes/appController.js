@@ -15,17 +15,18 @@ class AppController{
 
         signInButton.addEventListener('click', this.openSignInPage.bind(this));
         signUpButton.addEventListener('click', this.openSignUpPage.bind(this));
+        
     }
 
     openHomePage(){
         new HomePageController(this);
     }
 
-    openSignUpPage(){
-        new SignUpPageController(this);
-    }
-
     openSignInPage(){
         new SignInPageController(this);
+    }
+
+    openSignUpPage(){
+        new SignUpPageController(this);
     }
 }
