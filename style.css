@@ -68,7 +68,7 @@ body {
     gap: 20px;
 }
 
-.post{
+.post {
     background-color: lightgrey;
     padding: 10px;
     border-radius: 5px;
@@ -89,6 +89,21 @@ body {
 
 .post-description {
     font-weight: 400;
+}
+
+.post-topic, .post-date {
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 7px;
+    display: inline-block;
+}
+
+.post-topic {
+    background-color: lightblue;
+}
+
+.post-date {
+    background-color: lightsalmon;
 }
 
 .field-label {
