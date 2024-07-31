@@ -14,7 +14,7 @@ class SignUpPageController{
                 <input class="input-field" placeholder="Password" id="password">
                 <p class="field-label">Repeat your password:</p>
                 <input class="input-field" placeholder="Repeat the password" id="repeatedPassword">
-                <button class="form-button">Create a new account</button>
+                <button class="form-button button">Create a new account</button>
             </div>
         `;
     }

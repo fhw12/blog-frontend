@@ -12,7 +12,7 @@ class SignInPageController{
                 <input class="input-field" placeholder="Login" id="login">
                 <p class="field-label">Your password:</p>
                 <input class="input-field" placeholder="Password" id="password">
-                <button class="form-button">Login</button>
+                <button class="form-button button">Login</button>
             </div>
         `;
     }

@@ -3,6 +3,7 @@
     padding: 0;
     user-select: none;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -43,8 +44,8 @@ body {
     float: right;
 }
 
-.sign-in, .sign-up, .form-button {
-    background-color: lightslategrey;
+.sign-in, .sign-up, .form-button, .button {
+    background-color: hsl(210, 14%, 53%);
     border: none;
     padding: 10px;
     border-radius: 5px;
@@ -69,11 +70,12 @@ body {
 }
 
 .post {
-    background-color: lightgrey;
+    background-color: hsl(0, 0%, 83%);
     padding: 10px;
     border-radius: 5px;
     box-shadow: gray 2px 2px;
     cursor: pointer;
+    transition-duration: 0.3s;
 }
 
 .post-theme-date {
@@ -96,6 +98,8 @@ body {
     border-radius: 5px;
     margin-bottom: 7px;
     display: inline-block;
+    color: rgb(40, 40, 40);
+    font-weight: 500;
 }
 
 .post-topic {
@@ -128,4 +132,22 @@ body {
     .main {
         padding: 10px;
     }
+}
+
+@media (hover: hover){
+    .button:hover {
+        background-color: hsl(210, 14%, 43%);
+    }
+
+    .post:hover {
+        background-color: hsl(0, 0%, 63%);
+    }
+}
+
+.button:active {
+    background-color: hsl(210, 14%, 43%);;
+    position: relative;
+    left: 1px;
+    top: 1px;
+    box-shadow: #4b4b4b 1px 1px;
 }
