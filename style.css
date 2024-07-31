@@ -73,6 +73,7 @@ body {
     padding: 10px;
     border-radius: 5px;
     box-shadow: gray 2px 2px;
+    cursor: pointer;
 }
 
 .post-theme-date {
