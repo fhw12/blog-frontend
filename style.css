@@ -1,3 +1,30 @@
+:root {
+    --header-background-color: hsl(20, 17%, 86%);
+    --header-border-color: hsl(20, 17%, 80%);
+    --main-background-color: hsl(0, 25%, 94%);
+    --footer-background-color: hsl(0, 0%, 20%);
+    --footer-text-color: hsl(0, 0%, 83%);
+
+    --website-name-color: hsl(0, 0%, 29%);
+
+    --button-background-color: hsl(210, 14%, 53%);
+    --button-color: hsl(0, 0%, 96%);
+    --button-shadow-color: hsl(0, 0%, 29%);
+    --button-interaction-background-color: hsl(210, 14%, 43%);
+
+    --post-background-color: hsl(0, 0%, 83%);
+    --post-shadow-color: hsl(0, 0%, 50%);
+    --post-interaction-background-color: hsl(0, 0%, 63%);
+
+    --post-topic-date-text-color: hsl(0, 0%, 16%);
+    --post-topic-background-color: hsl(195, 53%, 79%);
+    --post-date-background-color: hsl(17, 100%, 74%);
+
+    --input-field-border-color: hsl(0, 25%, 82%);
+    --input-field-background-color: hsl(0, 0%, 100%);
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +34,7 @@
 }
 
 body {
-    background-color: #f3ebeb;
+    background-color: var(--main-background-color);
     font-size: 16px;
     min-height: 100vh;
     min-height: 100svh;
@@ -17,10 +44,10 @@ body {
 }
 
 .header {
-    background-color: #e2dad6;
+    background-color: var(--header-background-color);
     padding: 5px;
     padding-inline: 10px;
-    border-bottom: 1px solid hsl(20, 17%, 80%);
+    border-bottom: 1px solid var(--header-border-color);
 }
 
 .main {
@@ -29,13 +56,13 @@ body {
 }
 
 .footer {
-    background-color: hsl(0, 0%, 20%);
+    background-color: var(--footer-background-color);
     padding: 10px;
-    color: lightgray;
+    color: var(--footer-text-color);
 }
 
 .website-name {
-    color: #4b4b4b;
+    color: var(--website-name-color);
     display: inline-block;
     cursor: pointer;
 }
@@ -45,14 +72,14 @@ body {
 }
 
 .sign-in, .sign-up, .form-button, .button {
-    background-color: hsl(210, 14%, 53%);
+    background-color: var(--button-background-color);
     border: none;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
-    color: whitesmoke;
+    color: var(--button-color);
     font-size: 1em;
-    box-shadow: #4b4b4b 2px 2px;
+    box-shadow: var(--button-shadow-color) 2px 2px;
 }
 
 .form-button {
@@ -70,10 +97,10 @@ body {
 }
 
 .post {
-    background-color: hsl(0, 0%, 83%);
+    background-color: var(--post-background-color);
     padding: 10px;
     border-radius: 5px;
-    box-shadow: gray 2px 2px;
+    box-shadow: var(--post-shadow-color) 2px 2px;
     cursor: pointer;
     transition-duration: 0.3s;
 }
@@ -98,16 +125,16 @@ body {
     border-radius: 5px;
     margin-bottom: 7px;
     display: inline-block;
-    color: rgb(40, 40, 40);
+    color: var(--post-topic-date-text-color);
     font-weight: 500;
 }
 
 .post-topic {
-    background-color: lightblue;
+    background-color: var(--post-topic-background-color);
 }
 
 .post-date {
-    background-color: lightsalmon;
+    background-color: var(--post-date-background-color);
 }
 
 .field-label {
@@ -119,8 +146,8 @@ body {
     padding-inline: 5px;
     padding-block: 7px;
     border-radius: 5px;
-    border: 1px solid whitesmoke;
-    background-color: white;
+    border: 1px solid var(--input-field-border-color);
+    background-color: var(--input-field-background-color);
     min-width: 100%;
 }
 
@@ -136,18 +163,18 @@ body {
 
 @media (hover: hover){
     .button:hover {
-        background-color: hsl(210, 14%, 43%);
+        background-color: var(--button-interaction-background-color);
     }
 
     .post:hover {
-        background-color: hsl(0, 0%, 63%);
+        background-color: var(--post-interaction-background-color);
     }
 }
 
 .button:active {
-    background-color: hsl(210, 14%, 43%);;
+    background-color: var(--button-interaction-background-color);
     position: relative;
     left: 1px;
     top: 1px;
-    box-shadow: #4b4b4b 1px 1px;
+    box-shadow: var(--button-shadow-color) 1px 1px;
 }
