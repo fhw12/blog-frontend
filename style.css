@@ -20,10 +20,9 @@
     --post-topic-background-color: hsl(195, 53%, 79%);
     --post-date-background-color: hsl(17, 100%, 74%);
 
-    --input-field-border-color: hsl(0, 25%, 82%);
+    --input-field-border-color: hsl(0, 0%, 96%);
     --input-field-background-color: hsl(0, 0%, 100%);
 }
-
 
 * {
     margin: 0;
