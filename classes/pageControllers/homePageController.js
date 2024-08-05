@@ -6,9 +6,12 @@ class HomePageController{
 
     open(){
         this.appController.page.innerHTML = '<div class="post-container" id="post-container"></div>';
-        
+        this.appController.repository.loadPosts(this.showPostList.bind(this));
+    }
+
+    showPostList(){
         const posts = [...this.appController.repository.posts].reverse();
-        
+
         posts.forEach((post) => {
             this.addPost(post);
         });
