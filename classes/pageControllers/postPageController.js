@@ -7,11 +7,26 @@ class PostPageController{
     }
 
     open(){
-        this.appController.page.innerHTML = `
-            <div class="post-topic">${this.post.topic}</div>
-            <time class="post-date">${this.post.date}</time>
-            <h2>${this.post.title}</h2>
-            <span>${this.post.content}</span>
-        `;
+        const post = document.createElement('div');
+        const postTopic = document.createElement('div');
+        const postTime = document.createElement('time');
+        const postTitle = document.createElement('h2');
+        const postContent = document.createElement('span');
+
+        postTopic.className = 'post-topic';
+        postTime.className = 'post-date';
+
+        postTopic.textContent = this.post.topic;
+        postTime.textContent = this.post.date;
+        postTitle.textContent = this.post.title;
+        postContent.textContent = this.post.content;
+
+        post.appendChild(postTopic);
+        post.appendChild(postTime);
+        post.appendChild(postTitle);
+        post.appendChild(postContent);
+
+        this.appController.page.innerHTML = '';
+        this.appController.page.appendChild(post);
     }
 }
