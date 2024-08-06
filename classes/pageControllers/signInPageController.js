@@ -5,15 +5,59 @@ class SignInPageController{
     }
 
     open(){
-        this.appController.page.innerHTML = `
-            <div>
-                <h2>Log in</h2>
-                <p class="field-label">Your login:</p>
-                <input class="input-field" placeholder="Login" id="login">
-                <p class="field-label">Your password:</p>
-                <input class="input-field" placeholder="Password" id="password">
-                <button class="form-button button">Login</button>
-            </div>
-        `;
+        const form = document.createElement('form');
+        const formName = document.createElement('h2');
+        const loginText = document.createElement('p');
+        const loginInput = document.createElement('input');
+        const passwordText = document.createElement('p');
+        const passwordInput = document.createElement('input');
+        const submitButton = document.createElement('button');
+
+        loginText.className = 'field-label';
+        loginInput.className = 'input-field';
+        passwordText.className = 'field-label';
+        passwordInput.className = 'input-field';
+        submitButton.classList.add('form-button', 'button');
+
+        loginInput.setAttribute('placeholder', 'Login');
+        loginInput.setAttribute('id', 'login');
+        passwordInput.setAttribute('placeholder', 'Password');
+        passwordInput.setAttribute('id', 'password');
+        submitButton.setAttribute('type', 'submit');
+
+        formName.textContent = 'Log in';
+        loginText.textContent = 'Your login:';
+        passwordText.textContent = 'Your password:';
+        submitButton.textContent = 'Login';
+
+        submitButton.addEventListener('click', async (event) => {
+            event.preventDefault();
+            console.log('login:', loginInput.value);
+            console.log('password', passwordInput.value);
+
+            const response = await fetch(
+                'http://127.0.0.1:8000/signin',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        login: loginInput.value,
+                        password: passwordInput.value
+                    }),
+                }
+            );
+        });
+
+        form.appendChild(formName);
+        form.appendChild(loginText);
+        form.appendChild(loginInput);
+        form.appendChild(passwordText);
+        form.appendChild(passwordInput);
+        form.appendChild(submitButton);
+
+        this.appController.page.innerHTML = '';
+        this.appController.page.appendChild(form);
     }
 }
