@@ -130,6 +130,7 @@ body {
 
 .post-topic {
     background-color: var(--post-topic-background-color);
+    margin-right: 5px;
 }
 
 .post-date {
