@@ -46,6 +46,6 @@ class HomePageController{
             () => { this.openPost(post); }
         );
 
-        postContainer.appendChild(postElement);
+        postContainer?.appendChild(postElement);
     }
 }
