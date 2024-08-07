@@ -45,19 +45,12 @@ class SignInPageController{
                 return;
             }
 
-            const response = await fetch(
-                'http://127.0.0.1:8000/signin',
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        login: loginInput.value,
-                        password: passwordInput.value
-                    }),
-                }
-            );
+            const api = new APIRequests()
+            const result = await api.signIn(login, password);
+
+            if(result){
+                alert(result.message);
+            }
         });
 
         form.appendChild(formName);
