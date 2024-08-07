@@ -32,8 +32,18 @@ class SignInPageController{
 
         submitButton.addEventListener('click', async (event) => {
             event.preventDefault();
-            console.log('login:', loginInput.value);
-            console.log('password', passwordInput.value);
+            const login = loginInput.value;
+            const password = passwordInput.value;
+
+            if(login.length < 4) {
+                alert("Min length of the login: 4");
+                return;
+            }
+
+            if(password.length < 8){
+                alert('Min length of the password: 8');
+                return;
+            }
 
             const response = await fetch(
                 'http://127.0.0.1:8000/signin',
