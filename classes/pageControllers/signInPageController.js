@@ -49,6 +49,12 @@ class SignInPageController{
             const result = await api.signIn(login, password);
 
             if(result){
+                console.log(result);
+
+                if(result.message === "Successfully"){
+                    document.cookie = `token=${result.token}`;
+                }
+
                 alert(result.message);
             }
         });
