@@ -35,4 +35,17 @@ class Repository{
             }
         );
     }
+
+    getCookie(name){
+        const cookie = document.cookie;
+        const cookieArray = cookie.split('; ');
+        const result = cookieArray.find(
+            (item) => {
+                if(item.startsWith(name + '=')){
+                    return item;
+                }
+            }
+        )
+        return result ? result.split('=')[1] : null;
+    }
 }
