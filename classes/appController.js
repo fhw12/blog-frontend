@@ -26,7 +26,7 @@ class AppController{
                     const logoutButton = document.createElement('button');
                     logoutButton.className = 'button';
                     logoutButton.textContent = 'Logout';
-                    logoutButton.addEventListener('click', this.logout);
+                    logoutButton.addEventListener('click', this.logout.bind(this));
 
                     headerRightElement.appendChild(profileButton);
                     headerRightElement.appendChild(logoutButton);
@@ -58,6 +58,7 @@ class AppController{
 
     logout(){
         document.cookie = "token=; max-age=-1; path=/;";
+        this.authUser();
     }
 
     createEvents(){
