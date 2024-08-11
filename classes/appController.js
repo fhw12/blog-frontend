@@ -15,11 +15,12 @@ class AppController{
             (result) => {
                 console.log(result);
 
-                if(result){
-                    const headerRightElement = document.querySelector('.header-right');
+                const headerRightElement = document.querySelector('.header-right');
+                headerRightElement.innerHTML = '';
 
+                if(result){
                     const profileButton = document.createElement('button');
-                    profileButton.className = 'button margin-right';
+                    profileButton.classList.add('button', 'margin-right');
                     profileButton.textContent = `Profile(${result.username})`;
 
                     const logoutButton = document.createElement('button');
@@ -27,9 +28,29 @@ class AppController{
                     logoutButton.textContent = 'Logout';
                     logoutButton.addEventListener('click', this.logout);
 
-                    headerRightElement.innerHTML = '';
                     headerRightElement.appendChild(profileButton);
                     headerRightElement.appendChild(logoutButton);
+                } else {
+                    const signInButton = document.createElement('button');
+                    const signUpButton = document.createElement('button');
+
+                    signInButton.setAttribute('type', 'button');
+                    signUpButton.setAttribute('type', 'button');
+
+                    signInButton.classList.add('sign-in', 'button', 'margin-right');
+                    signUpButton.classList.add('sign-up', 'button');
+
+                    signInButton.id = 'signin';
+                    signUpButton.id = 'signup';
+
+                    signInButton.textContent = 'Sign In';
+                    signUpButton.textContent = 'Sign Up';
+
+                    signInButton.addEventListener('click', this.openSignInPage.bind(this));
+                    signUpButton.addEventListener('click', this.openSignUpPage.bind(this));
+
+                    headerRightElement.appendChild(signInButton);
+                    headerRightElement.appendChild(signUpButton);
                 }
             }
         );
@@ -42,12 +63,6 @@ class AppController{
     createEvents(){
         const websiteNameElement = document.querySelector('#website-name');
         websiteNameElement.addEventListener('click', this.openHomePage.bind(this));
-
-        const signInButton = document.querySelector('#signin');
-        const signUpButton = document.querySelector('#signup');
-
-        signInButton.addEventListener('click', this.openSignInPage.bind(this));
-        signUpButton.addEventListener('click', this.openSignUpPage.bind(this));
     }
 
     openHomePage(){
