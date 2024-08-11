@@ -50,4 +50,25 @@ class APIRequests{
             return null;
         }
     }
+
+    async getCurrentUser(token){
+        try{
+            const response = await fetch(
+                `${this.#baseURL}/get-current-user`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        token: token
+                    }),
+                }
+            );
+            return await this.responseParsing(response);
+        } catch(err){
+            console.log('Response error | ' + err);
+            return null;
+        }
+    }
 }
