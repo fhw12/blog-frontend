@@ -54,6 +54,7 @@ class SignInPageController{
                 if(result.message === "Successfully"){
                     document.cookie = `token=${result.token}`;
                     this.appController.authUser();
+                    this.appController.openHomePage();
                 }
             }
         });
