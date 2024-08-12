@@ -22,6 +22,7 @@ class AppController{
                     const profileButton = document.createElement('button');
                     profileButton.classList.add('button', 'margin-right');
                     profileButton.textContent = `Profile(${result.username})`;
+                    profileButton.addEventListener('click', this.openProfilePage.bind(this));
 
                     const logoutButton = document.createElement('button');
                     logoutButton.className = 'button';
@@ -59,6 +60,7 @@ class AppController{
     logout(){
         document.cookie = "token=; max-age=-1; path=/;";
         this.authUser();
+        this.openHomePage();
     }
 
     createEvents(){
@@ -80,5 +82,9 @@ class AppController{
 
     openPostPage(appController, post){
         new PostPageController(appController, post);
+    }
+
+    openProfilePage(){
+        new ProfilePageController(this);
     }
 }
