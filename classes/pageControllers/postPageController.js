@@ -19,7 +19,7 @@ class PostPageController{
         postTopic.textContent = this.post.topic;
         postTime.textContent = this.post.date;
         postTitle.textContent = this.post.title;
-        postContent.textContent = this.post.content;
+        postContent.innerHTML = this.post.content;
 
         post.appendChild(postTopic);
         post.appendChild(postTime);
