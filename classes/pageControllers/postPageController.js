@@ -31,6 +31,10 @@ class PostPageController{
             editPost.textContent = 'Edit';
             editPost.classList.add('button', 'margin-right');
 
+            editPost.addEventListener('click', () => {
+                this.appController.openEditPostPage(this.appController, this.post);
+            });
+
             deletePost.textContent = 'Delete';
             deletePost.classList.add('button');
 

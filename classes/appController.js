@@ -90,4 +90,8 @@ class AppController{
     openProfilePage(){
         new ProfilePageController(this);
     }
+
+    openEditPostPage(appController, post){
+        new EditPostPageController(appController, post);
+    }
 }
