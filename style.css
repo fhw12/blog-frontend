@@ -137,6 +137,10 @@ body {
     margin-right: 5px;
 }
 
+.margin-bottom {
+    margin-bottom: 5px;
+}
+
 .post-date {
     background-color: var(--post-date-background-color);
 }
