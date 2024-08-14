@@ -14,12 +14,30 @@ class PostPageController{
         const postContent = document.createElement('span');
 
         postTopic.className = 'post-topic';
-        postTime.className = 'post-date';
+        postTime.className = 'post-date margin-right';
 
         postTopic.textContent = this.post.topic;
         postTime.textContent = this.post.date;
         postTitle.textContent = this.post.title;
         postContent.innerHTML = this.post.content;
+
+        if(this.appController.repository.role == 'owner'){
+            const containerElement = document.createElement('div');
+            containerElement.classList.add('margin-bottom');
+
+            const editPost = document.createElement('button');
+            const deletePost = document.createElement('button');
+
+            editPost.textContent = 'Edit';
+            editPost.classList.add('button', 'margin-right');
+
+            deletePost.textContent = 'Delete';
+            deletePost.classList.add('button');
+
+            containerElement.appendChild(editPost);
+            containerElement.appendChild(deletePost);
+            post.appendChild(containerElement);
+        }
 
         post.appendChild(postTopic);
         post.appendChild(postTime);

@@ -17,8 +17,11 @@ class AppController{
 
                 const headerRightElement = document.querySelector('.header-right');
                 headerRightElement.innerHTML = '';
+                this.repository.role = '';
 
                 if(result){
+                    this.repository.role = result.role;
+
                     const profileButton = document.createElement('button');
                     profileButton.classList.add('button', 'margin-right');
                     profileButton.textContent = `Profile(${result.username})`;

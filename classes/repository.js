@@ -2,6 +2,7 @@ class Repository{
     constructor(){
         this.posts = new Array();
         this.apiRequests = new APIRequests();
+        this.role = '';
     }
 
     addPost(id, title, topic, date, description, content){
