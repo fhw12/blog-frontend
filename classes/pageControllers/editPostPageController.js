@@ -12,9 +12,12 @@ class EditPostPageController{
         const postTime = document.createElement('time');
         const postTitle = document.createElement('input');
         const postContent = document.createElement('textarea');
+        const updateButton = document.createElement('button');
 
         postTopic.className = 'post-topic';
         postTime.className = 'post-date margin-right';
+        postContent.className = 'margin-bottom';
+        updateButton.className = 'button';
         postTitle.style = 'width: 100%; padding: 10px; margin-bottom: 10px;';
         postContent.style = 'width: 100%; min-height: 50vh;';
 
@@ -22,11 +25,14 @@ class EditPostPageController{
         postTime.textContent = this.post.date;
         postTitle.value = this.post.title;
         postContent.innerHTML = this.post.content;
+        updateButton.textContent = 'Update';
+
 
         post.appendChild(postTopic);
         post.appendChild(postTime);
         post.appendChild(postTitle);
         post.appendChild(postContent);
+        post.appendChild(updateButton);
 
         this.appController.page.innerHTML = '';
         this.appController.page.appendChild(post);
